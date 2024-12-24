@@ -1,0 +1,62 @@
+To install the required Python modules for scripting in ANSA 25.0 on a CentOS VDI, you can follow these steps:
+
+Step 1: Check Python Version
+
+First, check the Python version on your system to ensure compatibility with the modules:
+
+python3 --version
+
+Step 2: Install pip
+
+Ensure pip, the Python package manager, is installed:
+
+sudo yum install python3-pip -y
+
+If pip is already installed, upgrade it:
+
+pip3 install --upgrade pip
+
+Step 3: Install Required Modules
+
+Run the following command to install all the required packages:
+
+pip3 install numpy pandas scikit-learn matplotlib python-pptx XlsxWriter xlrd
+
+Note:
+	•	scikit-learn is the package for sklearn.
+	•	python-pptx is for working with PowerPoint files.
+	•	XlsxWriter and xlrd are for handling Excel files.
+
+Step 4: Verify Installation
+
+Check if the modules are correctly installed:
+
+python3 -m pip show numpy pandas sklearn matplotlib python-pptx XlsxWriter xlrd
+
+Optional: Create a Virtual Environment
+
+If you prefer isolation for these libraries, use a virtual environment:
+	1.	Create a virtual environment:
+
+python3 -m venv ansa_env
+source ansa_env/bin/activate
+
+
+	2.	Install the packages inside the environment:
+
+pip install numpy pandas scikit-learn matplotlib python-pptx XlsxWriter xlrd
+
+
+	3.	Activate the environment whenever using ANSA.
+
+Step 5: Configure for ANSA
+
+If ANSA uses a specific Python interpreter or environment:
+	1.	Locate the Python interpreter used by ANSA.
+	2.	Install the packages using that interpreter:
+
+/path/to/ansa/python3 -m pip install numpy pandas scikit-learn matplotlib python-pptx XlsxWriter xlrd
+
+
+
+This ensures compatibility with ANSA’s Python scripting environment.
